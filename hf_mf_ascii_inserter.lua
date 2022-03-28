@@ -34,6 +34,11 @@ local function help()
     print(example)
 end
 
-local function convertAscii(Asc)
-        ()
+function main(args)
+    for o in getopt.getopt()
 
+function string.tohex(str)
+    return (str:gsub('.', function (c)
+        return string.format('%02X', string.byte(c))
+    end))
+end
