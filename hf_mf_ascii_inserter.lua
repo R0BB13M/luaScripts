@@ -2,7 +2,7 @@ local getopt = require('getopt')
 local ansicolors = require('ansicolors')
 
 copyright = ''
-author = 'robbie'
+author = 'R0BB13'
 version = 'v1.0'
 desc = [[
 This script automatically converts ascii into hex and puts it into a block of
@@ -32,13 +32,23 @@ local function help()
     print(arguments)
     print(ansicolors.cyan..'Example usage'..ansicolors.reset)
     print(example)
-end
-
-function main(args)
-    for o in getopt.getopt()
-
+end 
+    
 function string.tohex(str)
     return (str:gsub('.', function (c)
         return string.format('%02X', string.byte(c))
     end))
+end 
+
+local function sendCmds( cmds )
+    for i = 0, #cmds do
+        if cmds[i]  then
+            print ( cmds[i]  )
+            core.console( cmds[i] )
+            core.clearCommandBuffer()
+        end
+    end
 end
+
+function main(args) 
+    local 
